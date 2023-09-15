@@ -1,0 +1,35 @@
+<script>
+  document.getElementById("mobileNavBTN")?.addEventListener("click", () => {
+    document.getElementById("mobileNavLinkList")?.classList.toggle("hidden");
+    document.getElementById("mobileNavLinkList")?.classList.toggle("flex");
+  });
+</script>
+
+<nav class="fixed bottom-4 left-4 block md:hidden">
+  <button
+    class="bg-peachRed p-2 rounded-full shadow-lg flex flex-row align-middle items-center space-x-4"
+    id="mobileNavBTN"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 -960 960 960"
+      width="24"
+      class="fill-bgsh"
+      ><path
+        d="M153.782-212.303q-22.087 0-37.544-15.457-15.456-15.456-15.456-37.544 0-22.087 15.456-37.544 15.457-15.456 37.544-15.456h652.436q22.087 0 37.544 15.456 15.456 15.457 15.456 37.544 0 22.088-15.456 37.544-15.457 15.457-37.544 15.457H153.782Zm0-214.696q-22.087 0-37.544-15.457-15.456-15.457-15.456-37.544 0-22.087 15.456-37.544 15.457-15.457 37.544-15.457h652.436q22.087 0 37.544 15.457 15.456 15.457 15.456 37.544 0 22.087-15.456 37.544-15.457 15.457-37.544 15.457H153.782Zm0-214.697q-22.087 0-37.544-15.456-15.456-15.457-15.456-37.544 0-22.088 15.456-37.544 15.457-15.457 37.544-15.457h652.436q22.087 0 37.544 15.457 15.456 15.456 15.456 37.544 0 22.087-15.456 37.544-15.457 15.456-37.544 15.456H153.782Z"
+      ></path></svg
+    >
+    <div class="hidden flex-row space-x-4" id="mobileNavLinkList">
+      <a href="#about" class="">
+        <span class="text-sm text-bgsh font-bold">About</span>
+      </a>
+      <a href="#projects" class="">
+        <span class="text-sm text-bgsh font-bold">Projects</span>
+      </a>
+      <a href="#resume" class="">
+        <span class="text-sm text-bgsh font-bold">Resume</span>
+      </a>
+    </div>
+  </button>
+</nav>

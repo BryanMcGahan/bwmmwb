@@ -1,7 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Nav from "../components/nav.astro";
+import TopNav from "../components/topnav.astro";
+import SideNav from "../components/sidenav.astro";
 import Footer from "../components/footer.astro";
+import Content from "../components/content.astro";
+import DarkModeButton from "../components/darkmodebutton.astro";
+import MobileNav from "../components/mobilenav.astro";
 ---
 
 <script>
@@ -27,41 +31,13 @@ import Footer from "../components/footer.astro";
 </script>
 
 <Layout title="Bryan W McGahan">
-  <main class="relative xl:container xl:mx-auto">
-    <Nav />
-    <div
-      id="bwmmwb"
-      class="mx-8 h-[90vh] flex flex-row space-x-4 overflow-hidden"
-    >
-      <div class="flex flex-col justify-center w-1/2 h-full">
-        <div class="mb-4">
-          <h2 class="text-4xl font-bold text-peachRed">Bryan McGahan</h2>
-        </div>
-        <div>
-          <p class="font-light">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae
-            semper quis lectus nulla at volutpat diam ut venenatis. Mattis
-            molestie a iaculis at erat pellentesque adipiscing commodo elit.
-            Tempus urna et pharetra pharetra massa massa. Ut porttitor leo a
-            diam sollicitudin.
-          </p>
-        </div>
-      </div>
-      <div
-        id="scrollable"
-        class="w-1/2 overflow-y-scroll h-full snap-mandatory snap-y space-y-4 scroll-smooth"
-      >
-        <div
-          class="h-full snap-center flex flex-col items-center border pt-8"
-          id="projects"
-        >
-          <p class="font-bold text-2xl">Projects</p>
-        </div>
-      </div>
-    </div>
+  <main class="mx-4 sm:container sm:mx-auto">
+    <SideNav />
+    <TopNav />
+    <Content />
   </main>
-  <Footer />
+  <MobileNav />
+  <DarkModeButton />
 </Layout>
 
 <style>
