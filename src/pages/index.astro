@@ -31,10 +31,12 @@ import MobileNav from "../components/mobilenav.astro";
 </script>
 
 <Layout title="Bryan W McGahan">
-  <main class="mx-4 sm:container sm:mx-auto">
+  <main class="md:container md:mx-auto">
     <SideNav />
-    <TopNav />
-    <Content />
+    <div class="px-10 lg:px-40">
+      <TopNav />
+      <Content />
+    </div>
   </main>
   <MobileNav />
   <DarkModeButton />
