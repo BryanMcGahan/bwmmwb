@@ -1,0 +1,88 @@
+<nav
+	class="fixed left-0 right-0 top-0 min-h-fit py-2 rounded-b-lg shadow-sm backdrop-blur-3xl z-20"
+	id="navbar"
+>
+	<div class="mx-4 md:container md:mx-auto">
+		<div class="flex flex-row items-center justify-between">
+			<div>
+				<a href="#main" class="text-2xl font-bold">
+					bwmmwb.<span class="text-teal-500">dev</span>
+				</a>
+			</div>
+			<div class="hidden md:block">
+				<ul class="flex flex-row space-x-4 align-middle">
+					<li>
+						<a href="#projects" class="text-sm font-semibold"
+							>Projects</a
+						>
+					</li>
+					<li>
+						<a href="#resume" class="text-sm font-semibold"
+							>Resume</a
+						>
+					</li>
+					<li>
+						<a href="#contact" class="text-sm font-semibold"
+							>Contact</a
+						>
+					</li>
+				</ul>
+			</div>
+			<button class="inline md:hidden" id="mobile_menu_btn">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					height="24"
+					viewBox="0 -960 960 960"
+					width="24"
+					class="fill-zinc-800 dark:fill-zinc-100"
+					><path
+						d="M142-184q-29 0-48.5-20T74-252q0-29 19.5-48.5T142-320h676q29 0 48.5 19.5T886-252q0 28-19.5 48T818-184H142Zm0-228q-29 0-48.5-20T74-480q0-29 19.5-48.5T142-548h676q29 0 48.5 19.5T886-480q0 28-19.5 48T818-412H142Zm0-229q-29 0-48.5-19.5T74-709q0-28 19.5-48t48.5-20h676q29 0 48.5 20t19.5 48q0 29-19.5 48.5T818-641H142Z"
+					></path></svg
+				>
+			</button>
+		</div>
+		<div
+			class="w-full justify-center text-center hidden transition ease-linear delay-150 duration-150"
+			id="mobile_menu"
+		>
+			<div class="mt-4 w-full flex flex-col space-y-2">
+				<a
+					href="/projects"
+					class="mobile_option w-full py-2 rounded-full shadow-md"
+				>
+					<span class="font-semibold text-sm">Projects</span>
+				</a>
+				<a
+					href="/resume"
+					class="mobile_option w-full py-2 rounded-full shadow-md"
+				>
+					<span class="font-semibold text-sm">Resume</span>
+				</a>
+				<a
+					href="/contact"
+					class="mobile_option w-full py-2 rounded-full shadow-md"
+				>
+					<span class="font-semibold text-sm">Contact</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<script>
+	const mobile_menu_btn = document.getElementById("mobile_menu_btn");
+	const mobile_menu = document.getElementById("mobile_menu");
+	const mobile_menu_options =
+		document.getElementsByClassName("mobile_option");
+	mobile_menu_btn?.addEventListener("click", () => {
+		mobile_menu?.classList.toggle("flex");
+		mobile_menu?.classList.toggle("hidden");
+	});
+
+	for (let option of mobile_menu_options) {
+		option.addEventListener("click", () => {
+			mobile_menu?.classList.toggle("flex");
+			mobile_menu?.classList.toggle("hidden");
+		});
+	}
+</script>

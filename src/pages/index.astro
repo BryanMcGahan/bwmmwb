@@ -1,54 +1,85 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import TopNav from "../components/topnav.astro";
-import SideNav from "../components/sidenav.astro";
-import Footer from "../components/footer.astro";
-import Content from "../components/content.astro";
-import DarkModeButton from "../components/darkmodebutton.astro";
-import MobileNav from "../components/mobilenav.astro";
+import Nav from "../components/Nav.astro";
 ---
 
-<script>
-  const localStorage = window.localStorage;
-  let theme = localStorage.theme;
+<Layout title="Welcome to bwmmwb">
+	<Nav />
+	<main
+		class="mx-4 md:container md:mx-auto pt-[50px] scroll-smooth"
+		id="main"
+	>
+		<div class="h-[100vh]" id="home">
+			<div class="text-center mt-16">
+				<p class="font-bold text-3xl block md:hidden">
+					Welcome to bwmmwb<span class="text-teal-500">.dev</span>!
+				</p>
+			</div>
+			<div
+				class="flex flex-col-reverse justify-evenly md:flex-row h-3/4 items-center"
+			>
+				<div class="px-4 py-4 rounded-lg">
+					<div class="text-center
+					my-8
+					hidden
+					md:block">
+						<p class="font-bold text-4xl md:text-left">
+							Welcome to bwmmwb<span class="text-teal-500"
+								>.dev</span
+							>!
+						</p>
+					</div>
+					<div
+						class="w-fit max-w-md md:max-w-xl text-center md:text-left"
+					>
+						<p class="opacity-70 font-semibold">
+							Hello, I'm Bryan McGahan, a passionate software
+							engineer with a knack for crafting elegant solutions
+							to complex problems. With a strong foundation in
+							programming and a keen eye for detail, I specialize
+							in creating efficient, user-centric software that
+							bridges the gap between innovation and
+							functionality. Explore my portfolio to see how I
+							bring ideas to life through code.
+						</p>
+					</div>
+				</div>
+				<div class="w-fit flex flex-col items-center">
+					<img
+						src="/me.png"
+						alt=""
+						class="rounded-2xl w-3/4 md:w-5/6"
+					/>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="h-[100vh] pt-[64px]" id="projects"> -->
+		<!-- 	<div -->
+		<!-- 		class="w-full h-full flex flex-row items-center justify-evenly" -->
+		<!-- 	> -->
+		<!-- 		<div> -->
+		<!-- 			<p class="text-4xl">Projects</p> -->
+		<!-- 		</div> -->
+		<!-- 		<div> -->
+		<!-- 			<div></div> -->
+		<!-- 		</div> -->
+		<!-- 	</div> -->
+		<!-- </div> -->
+		<!-- <div class="h-[100vh] border pt-[50px]" id="resume"></div> -->
+		<!-- <div class="h-[100vh] border pt-[50px]" id="contact"></div> -->
+	</main>
 
-  if (
-    theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.add("dark");
-    localStorage.theme = "dark";
-  } else {
-    document.documentElement.classList.remove("dark");
-    localStorage.theme = "light";
-  }
-
-  document.getElementById("darkMode")?.addEventListener("click", () => {
-    localStorage.theme = localStorage.theme === "dark" ? "light" : "dark";
-    document.documentElement.classList.toggle("dark");
-  });
-</script>
-
-<Layout title="Bryan W McGahan">
-  <main class="md:container md:mx-auto">
-    <SideNav />
-    <div class="px-10 lg:px-40">
-      <TopNav />
-      <Content />
-    </div>
-  </main>
-  <MobileNav />
-  <DarkModeButton />
+	<script>
+		document.getElementById("main")?.addEventListener("click", () => {
+			if (
+				!document
+					.getElementById("mobile_menu")
+					?.classList.contains("hidden")
+			) {
+				document
+					.getElementById("mobile_menu")
+					?.classList.toggle("hidden");
+			}
+		});
+	</script>
 </Layout>
-
-<style>
-  #scrollable::-webkit-scrollbar {
-    display: none;
-  }
-
-  #scrollable {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-</style>
